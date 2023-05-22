@@ -1,0 +1,74 @@
+.logos{
+    color:#444c9c;
+    text-decoration:none;
+}
+.errormesseage{
+    color:red;
+}
+.header{
+    text-align: center;
+}
+.form{
+    text-size-adjust: 10%;
+    background-color: beige;
+    position: absolute;
+    
+    vertical-align: middle;
+    position: relative;
+    height: 50%;
+    width: 70%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-size: 22px;
+}
+.forms{
+    font-size: 120%;
+    margin : 15px ;
+}
+
+.c-button {
+    margin : 5px ;
+    display: block;
+    padding: 7px 25px;
+    border-radius: 7px;
+    border: none;
+    border-bottom: 4px solid #cc1d3a;
+    background-color: #f32160;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+    appearance: none;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+    
+  .c-button:active {
+    outline: none;
+    box-shadow: 0 0 0 4px #cbd6ee;
+  }
+
+  .btn-submit{
+    display: block;
+    padding: 7px 25px;
+    border-radius: 7px;
+    border: none;
+    border-bottom: 4px solid #1d7dcc;
+    background-color: #2196f3;
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+    appearance: none;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+  .btn-submit:active {
+    margin-top: 3px;
+    background-color: #309bf2;
+    border-bottom: 2px solid #006366;
+  }

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='stylesheet.css') }}">
+    <title>GPTwit</title>    
+    <script src="../static/js/script.js"></script>
+</head>
+<body>
+    <header class="header">
+        <a href="/" class="logos"><h1>GPTwit</h1></a>
+    </header>
+    <div class="form">
+    <form id="myForm" action="/response/" method="post">
+        <div>
+            <label for="content">ツイート内容を入力</label><br>
+            <input type="text" id="content" name="content" class="forms">
+        </div>
+        <div>
+            <label for="API_KEY">APIキーを入力</label><br>
+            <input type="password" id="API_KEY" name="API_KEY" value="" class="forms">
+            <button type="button" id="btn_passview" class="c-button">表示</button>
+        </div>
+        <input type="submit" value="ツイートを生成" class="btn-submit">
+    </form>
+    </div>
+    <script>
+        document.getElementById("myForm").addEventListener("submit", function(e) {
+            var API_KEY = document.getElementById("API_KEY").value;
+        
+            // クッキーに保存
+            setCookie("API_KEY", API_KEY, 14); // APIキーをクッキーに保存（有効期限は7日）
+        
+        });
+        
+        function setCookie(name, value, days) {
+            var expires = "";
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + encodeURIComponent(value) + expires + "; path=/";
+        }
+        
+        // ページ読み込み時にクッキーからAPIキーを取得し、フォームのAPI_KEYフィールドに設定する
+        window.addEventListener("load", function() {
+            var API_KEY = getCookie("API_KEY");
+            if (API_KEY) {
+                document.getElementById("API_KEY").value = decodeURIComponent(API_KEY);
+            }
+        });
+        
+        function getCookie(name) {
+            var nameEQ = name + "=";
+            var ca = document.cookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) === ' ') {
+                    c = c.substring(1, c.length);
+                }
+                if (c.indexOf(nameEQ) === 0) {
+                    return c.substring(nameEQ.length, c.length);
+                }
+            }
+            return null;
+        }
+        </script>
+    
+</body>
+</html>
