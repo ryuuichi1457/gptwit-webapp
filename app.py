@@ -45,4 +45,4 @@ def response():
   return make_Tweet(API_KEY,content)
 
 if __name__ == '__main__':
-  app.run(debug=True)
+  app.run()
