@@ -2,7 +2,7 @@ from flask import Flask, render_template,request
 import openai
 import datetime
 
-app = Flask(__name__, static_folder="static")
+app = Flask(__name__)
 
 def url_encode(string):
     string = string.replace("#", "%0a%23")
