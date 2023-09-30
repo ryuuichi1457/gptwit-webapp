@@ -36,7 +36,7 @@ def make_Tweet(API_KEY,contents):
 
 @app.route('/')
 def index():
-  return render_template('index.html')
+  return render_template('main.html')
 
 @app.route('/response/',methods=['POST'])
 def response():
@@ -45,4 +45,4 @@ def response():
   return make_Tweet(API_KEY,content)
 
 if __name__ == '__main__':
-  app.run()
+  app.run(debug=True)
