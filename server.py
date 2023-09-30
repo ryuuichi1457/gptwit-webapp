@@ -13,7 +13,7 @@ def url_encode(string):
     string = string.replace('"', "")
     return string
 
-def make_Tweet(API_KEY,contents):
+""" def make_Tweet(API_KEY,contents):
     try:
         current_datetime = datetime.datetime.now()
         time = current_datetime.strftime("%m-%d %H:%M")
@@ -33,7 +33,7 @@ def make_Tweet(API_KEY,contents):
     except:
         return ("<link rel=\"stylesheet\" href=\"{{ url_for('static', filename='stylesheet.css') }}\">\n"
         "<p class=\"errormesseage\">エラーが発生しました。<br>APIキーが違ったり、連続した生成が原因であることが多いです。</p>")
-
+ """
 @app.route('/')
 def index():
   return render_template('main.html')
@@ -45,4 +45,4 @@ def response():
   return make_Tweet(API_KEY,content)
 
 if __name__ == '__main__':
-  app.run(debug=True)
+  app.run()
