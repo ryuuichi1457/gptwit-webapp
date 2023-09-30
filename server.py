@@ -38,6 +38,10 @@ def url_encode(string):
 def index():
   return render_template('render.html')
 
+@app.route('/test')
+def response():
+   return '<h1>test yattane!!</h1>'
+
 @app.route('/response/',methods=['POST'])
 def response():
   API_KEY = request.form.get('API_KEY')
