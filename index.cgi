@@ -1,4 +1,4 @@
-#!/usr/local/bin/python3
+#!/usr/local/bin/python3.7
 from wsgiref.handlers import CGIHandler
-from serberz import app
+from server import app
 CGIHandler().run(app)
