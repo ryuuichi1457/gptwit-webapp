@@ -1,4 +1,5 @@
-from flask import Flask, render_template,request
+from flask import Flask 
+""" render_template,request """
 import openai
 import datetime
 
@@ -48,5 +49,4 @@ def response():
   content = request.form.get('content')
   return make_Tweet(API_KEY,content) """
 
-if __name__ == '__main__':
-  app.run()
+app.run()
