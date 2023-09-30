@@ -2,7 +2,7 @@ from flask import Flask, render_template,request
 import openai
 import datetime
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='./static', static_url_path='')
 
 def url_encode(string):
     string = string.replace("#", "%0a%23")
@@ -36,17 +36,17 @@ def url_encode(string):
  """
 @app.route('/')
 def index():
-  return render_template('render.html')
+  return app.send_static_file('render.html')
 
 @app.route('/test')
-def response():
+def hello():
    return '<h1>test yattane!!</h1>'
 
-@app.route('/response/',methods=['POST'])
+""" @app.route('/response/',methods=['POST'])
 def response():
   API_KEY = request.form.get('API_KEY')
   content = request.form.get('content')
-  return make_Tweet(API_KEY,content)
+  return make_Tweet(API_KEY,content) """
 
 if __name__ == '__main__':
   app.run()
