@@ -36,7 +36,7 @@ def url_encode(string):
  """
 @app.route('/')
 def index():
-  return render_template('main.html')
+  return render_template('render.html')
 
 @app.route('/response/',methods=['POST'])
 def response():
