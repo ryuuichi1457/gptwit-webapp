@@ -1,7 +1,7 @@
 from flask import Flask 
 """ render_template,request """
-""" import openai
-import datetime """
+import openai
+import datetime
 
 app = Flask(__name__, static_folder='./static', static_url_path='')
 
@@ -37,8 +37,8 @@ def url_encode(string):
  """
 @app.route('/')
 def index():
-  return '<h1>Hello World</h1>'
-  """ return app.send_static_file('render.html') """
+  """ return '<h1>Hello World</h1>' """
+  return app.send_static_file('main.html')
 
 @app.route('/test')
 def hello():
@@ -51,4 +51,4 @@ def response():
   return make_Tweet(API_KEY,content) """
 
 if __name__ == "__main__":
-    app.run(port=8000, debug=True)
+    app.run()
